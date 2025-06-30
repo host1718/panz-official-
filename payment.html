@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>PAYMENT PANZ</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body, html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      font-family: Arial, sans-serif;
+      overflow: hidden;
+    }
+
+    /* Video Background */
+    #background-video {
+      position: fixed;
+      right: 0;
+      bottom: 0;
+      min-width: 100%;
+      min-height: 100%;
+      z-index: -1;
+      object-fit: cover;
+    }
+
+    /* Overlay Container */
+    .container {
+      position: relative;
+      z-index: 1;
+      height: 100vh;
+      background-color: rgba(0, 0, 0, 0.5);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: white;
+      padding: 20px;
+    }
+
+    h1 {
+      color: orange;
+      font-size: 36px;
+      margin-bottom: 10px;
+    }
+
+    .phone-number {
+      font-size: 22px;
+      margin-bottom: 10px;
+    }
+
+    .copy-button {
+      background-color: #28a745;
+      border: none;
+      color: white;
+      padding: 10px 20px;
+      font-size: 16px;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-bottom: 10px;
+      transition: background-color 0.3s;
+    }
+
+    .copy-button:hover {
+      background-color: #218838;
+    }
+
+    .name {
+      font-size: 16px;
+      margin-bottom: 20px;
+    }
+
+    .qris-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .qris-container img {
+      width: 300px;
+      max-width: 90%;
+      border-radius: 10px;
+      margin-bottom: 10px;
+    }
+
+    .download-button {
+      background-color: #007bff;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      font-size: 16px;
+      border-radius: 5px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background-color 0.3s;
+    }
+
+    .download-button:hover {
+      background-color: #0056b3;
+    }
+
+    /* Audio Styling */
+    .audio-wrapper {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: rgba(30, 30, 30, 0.85);
+      padding: 10px 12px;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(255, 111, 0, 0.6);
+      z-index: 10;
+    }
+
+    .audio-wrapper audio {
+      width: 250px;
+      outline: none;
+      border-radius: 8px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Audio Player -->
+  <div class="audio-wrapper">
+    <audio controls>
+      <source src="./video/vn.mp3" type="audio/mp3">
+      Browser kamu tidak mendukung audio.
+    </audio>
+  </div>
+
+  <!-- Background Video -->
+  <video autoplay muted loop id="background-video">
+    <source src="https://qu.ax/Mhgdy.mp4" type="video/mp4">
+    Browser kamu tidak mendukung video.
+  </video>
+
+  <!-- Main Content -->
+  <div class="container">
+    <h1>PAYMENT PANZ</h1>
+    <div class="phone-number">08388068992</div>
+    <button class="copy-button" onclick="copyText()">Copy Nomor DANA</button>
+    <div class="name">QRIS Code</div>
+
+    <div class="qris-container">
+      <img src="https://img1.pixhost.to/images/6867/616932878_dhikzty.jpg" alt="QRIS Code" />
+      <a href="./img/qr.png" download class="download-button">VIEW QRIS</a>
+    </div>
+  </div>
+
+  <script>
+    function copyText() {
+      navigator.clipboard.writeText("08388068992")
+        .then(() => alert("Nomor DANA berhasil disalin!"))
+        .catch(() => alert("Gagal menyalin."));
+    }
+  </script>
+
+</body>
+</html>
