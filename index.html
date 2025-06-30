@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Selamat Datang</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #000;
+      color: #fff;
+      font-family: Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      opacity: 0;
+      transform: translateY(30px);
+      animation: fadeInSlide 1s ease forwards;
+    }
+
+    @keyframes fadeInSlide {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    h1 {
+      margin-bottom: 20px;
+      font-size: 2em;
+    }
+
+    .button {
+      padding: 10px 20px;
+      background-color: #2563eb;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      font-size: 1em;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background-color 0.3s ease;
+    }
+
+    .button:hover {
+      background-color: #1d4ed8;
+    }
+  </style>
+</head>
+<body>
+  <h1>Selamat Datang</h1>
+  <a href="payment.html" class="button">Go to Payment</a>
+</body>
+</html>
